@@ -23,7 +23,7 @@
                                user = "postgres"  password = "1234"/>
 
             <sql:query var="result" dataSource="${snapshot}">
-                select RegisterTrack.idRegi,RegisterTrack.regiDate, Hospitalized.ident, Hospitalized.idTreat, RegisterTrack.observ from RegisterTrack inner join Hospitalized on RegisterTrack.idFun is not null
+                select RegisterTrack.idRegi,RegisterTrack.regiDate, Hospitalized.ident, Hospitalized.idTreat, RegisterTrack.observ from RegisterTrack inner join Hospitalized on RegisterTrack.idFun = Hospitalized.idFun
 
             </sql:query>
 
