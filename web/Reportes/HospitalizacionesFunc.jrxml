@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60999f1e-6e3c-413c-b46b-c091c6e1a22a">
+	<queryString language="SQL">
+		<![CDATA[select distinct patient.ident, patient.namep, patient.firslastn, patient.seclastname, attentionCenter.namecen, functionary.namefun, functionary.firstlastn, HealthArea.area, diagnosis.named, infoTreatment.namet, hospitaldates.entrydate, hospitaldates.exitdate, registertrack.observ from hospitalized inner join patient on patient.ident = hospitalized.ident inner join attentionCenter on attentionCenter.idattcen = hospitalized.idattcen inner join functionary on functionary.idfun = hospitalized.idfun inner join HealthArea on HealthArea.idharea = hospitalized.idharea inner join diagnosis on diagnosis.iddiag = hospitalized.iddiag inner join infoTreatment on infoTreatment.idtreat = hospitalized.idtreat inner join hospitaldates on hospitaldates.ident = hospitalized.ident inner join registertrack on registertrack.idregi = hospitalized.idregi 
+]]>
+	</queryString>
+	<field name="ident" class="java.lang.Integer"/>
+	<field name="namep" class="java.lang.String"/>
+	<field name="firslastn" class="java.lang.String"/>
+	<field name="seclastname" class="java.lang.String"/>
+	<field name="namecen" class="java.lang.String"/>
+	<field name="namefun" class="java.lang.String"/>
+	<field name="firstlastn" class="java.lang.String"/>
+	<field name="area" class="java.lang.String"/>
+	<field name="named" class="java.lang.String"/>
+	<field name="namet" class="java.lang.String"/>
+	<field name="entrydate" class="java.lang.String"/>
+	<field name="exitdate" class="java.lang.String"/>
+	<field name="observ" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
